@@ -1,6 +1,13 @@
 # ComfyUI-GGUF
 GGUF Quantization support for native ComfyUI models
 
+```bash
+#### 通过 comfyui model manager 进行安装
+https://huggingface.co/mcmonkey/google_t5-v1_1-xxl_encoderonly
+
+使用 ltxv_13b_workflow_I2V.json
+```
+
 This is currently very much WIP. These custom nodes provide support for model files stored in the GGUF format popularized by [llama.cpp](https://github.com/ggerganov/llama.cpp).
 
 While quantization wasn't feasible for regular UNET models (conv2d), transformer/DiT models such as flux seem less affected by quantization. This allows running it in much lower bits per weight variable bitrate quants on low-end GPUs. For further VRAM savings, a node to load a quantized version of the T5 text encoder is also included.
